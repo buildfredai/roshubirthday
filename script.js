@@ -26,3 +26,22 @@ const updateCountdown = () => {
 };
 
 setInterval(updateCountdown, 1000);
+
+
+// Time-based Easter Egg message
+const easterEgg = document.getElementById("easter-egg");
+const hour = new Date().getHours();
+
+let message = "";
+
+if (hour >= 5 && hour < 11) {
+  message = "Good morning ☀️ another day closer to something special.";
+} else if (hour >= 11 && hour < 18) {
+  message = "Time is moving… and so are my thoughts 💭";
+} else if (hour >= 18 && hour < 23) {
+  message = "It’s getting late… but I’m still counting for you ✨";
+} else {
+  message = "You should be sleeping… I’m still here, counting 💖";
+}
+
+easterEgg.innerText = message;
